@@ -10,3 +10,14 @@ Original publication:
 Johnson, A. E. W., Pollard, T. J., Shen, L., Lehman, L. H., Feng, M., Ghassemi, M., Moody, B., Szolovits, P., Celi, L. A., & Mark, R. G. (2016). MIMIC-III, a freely accessible critical care database. Scientific Data, 3, 160035.
 
 PhysioNet: Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., ... & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220.
+
+
+Hospital Readmission Risk Prediction | MIMIC-III | Python, SQL, BigQuery, Tableau
+
+Extracted and integrated ICU stays, labs, procedures, medications, and demographics data per hospital admission from the MIMIC-III database using SQL and Google BigQuery.
+
+Performed univariate and bivariate analysis to identify key predictors of readmission, including Medicare insurance, diabetes, CHF, comorbidities, and admission history.
+
+Engineered a custom risk scoring metric and categorized patients into low, moderate, and high-risk groups.
+
+Built and evaluated logistic regression models in Python (scikit-learn) with class balancing and threshold tuning, achieving ~86% accuracy and high recall for the high-risk group.
