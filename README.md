@@ -21,3 +21,4 @@ Performed univariate and bivariate analysis to identify key predictors of readmi
 Engineered a custom risk scoring metric and categorized patients into low, moderate, and high-risk groups.
 
 Built and evaluated logistic regression models in Python (scikit-learn) with class balancing and threshold tuning, achieving ~86% accuracy and high recall for the high-risk group.
+Exported model predictions and scores to CSV for Tableau dashboards to support clinical insights.
