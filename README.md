@@ -1,24 +1,15 @@
-# MIMIC-III-hospital-resource-utilization
+# Hospital Readmission Risk Prediction
 
-- Developed an end-to-end ETL pipeline in BigQuery using MIMIC-III clinical data to analyze hospital resource utilization. 
-- Combined ICU stays, procedures, labs, medications, and demographics per hospital admission. 
-- Built Tableau dashboards to visualize length of stay, ICU hours, and treatment patterns across patient cohorts.(Average ICU hours per diagnosis, Resource usage by age and gender, LOS vs procedures or meds,Top diagnoses with highest ICU burden)
+- Goal: Built a machine learning model to predict 30-day hospital readmission risk.
 
-Data Source: Johnson, A., Pollard, T., & Mark, R. (2019). MIMIC-III Clinical Database Demo (version 1.4). PhysioNet. https://doi.org/10.13026/C2HM2Q.
+- Extracted and integrated ICU stays, labs, procedures, medications, and demographics using SQL + BigQuery from mimic-iii clinical database via physionet
 
-Original publication:
-Johnson, A. E. W., Pollard, T. J., Shen, L., Lehman, L. H., Feng, M., Ghassemi, M., Moody, B., Szolovits, P., Celi, L. A., & Mark, R. G. (2016). MIMIC-III, a freely accessible critical care database. Scientific Data, 3, 160035.
+- Conducted univariate and bivariate analysis to identify key risk factors: e.g., Medicare insurance, diabetes, CHF, comorbidity score, and prior admissions.
 
-PhysioNet: Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., ... & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220.
+- Engineered a custom risk scoring metric and classified patients into low, moderate, and high-risk groups.
 
+- Trained a logistic regression model using Python (scikit-learn) with: Class imbalance handling,Threshold tuning and Achieved ~86% accuracy and high recall for the high-risk group
 
-Hospital Readmission Risk Prediction | MIMIC-III | Python, SQL, BigQuery, Tableau
+- Exported model outputs to CSV for dashboard integration.
 
-Extracted and integrated ICU stays, labs, procedures, medications, and demographics data per hospital admission from the MIMIC-III database using SQL and Google BigQuery.
-
-Performed univariate and bivariate analysis to identify key predictors of readmission, including Medicare insurance, diabetes, CHF, comorbidities, and admission history.
-
-Engineered a custom risk scoring metric and categorized patients into low, moderate, and high-risk groups.
-
-Built and evaluated logistic regression models in Python (scikit-learn) with class balancing and threshold tuning, achieving ~86% accuracy and high recall for the high-risk group.
-Exported model predictions and scores to CSV for Tableau dashboards to support clinical insights.
+- 📊 Tableau Dashboard: https://public.tableau.com/app/profile/madhu.chavali2213/viz/readmissionrisk/Dashboard1
